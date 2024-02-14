@@ -1,4 +1,3 @@
-Certainly! Here's a revised README.md for your project:
 
 # Validated File Upload with React and Flask
 
