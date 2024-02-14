@@ -1,6 +1,5 @@
 Certainly! Here's a revised README.md for your project:
 
-```
 # Validated File Upload with React and Flask
 
 This project demonstrates a file upload system implemented using React for the front end and Flask for the back end. It includes validation for file type, file size, and appointment date and time.
@@ -39,7 +38,7 @@ This project demonstrates a file upload system implemented using React for the f
 
 1. Clone this repository:
 
-```bash
+```
 git clone https://github.com/your-username/Validated-File-Upload-React-Flask.git
 ```
 
