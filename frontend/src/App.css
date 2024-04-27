@@ -1,6 +1,6 @@
 body {
  font-family: Arial, sans-serif;
- background-image: url(C:\Users\Sharvari\PycharmProjects\file_upload_app\frontend\src\Img\hospital_background.jpg);
+ background-image: url("https://github.com/o-Erebus/Validated-File-Upload-React-Flask/blob/master/frontend/src/Img/hospital_background.jpg");
  background-size: cover;
  background-position: center;
  background-attachment: fixed;
