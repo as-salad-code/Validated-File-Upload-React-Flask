@@ -56,7 +56,7 @@ function App() {
     fd.append("date", appointment.date); // Include date in the form data
     fd.append("time", appointment.time); // Include time in the form data
 
-    axios.post("https://validated-file.onrender.com", fd, {
+    axios.post("https://validated-file.onrender.com/upload", fd, {
       onUploadProgress: (progressEvent) => {
         setProgress((progressEvent.loaded / progressEvent.total) * 100);
       },
