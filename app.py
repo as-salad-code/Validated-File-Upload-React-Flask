@@ -38,7 +38,7 @@ def valid_time(time_str):
 
 def scan_file(file_path):
     try:
-        clamscan_path = r'C:\Users\Sharvari\Downloads\clamav-1.3.0.win.x64\clamav-1.3.0.win.x64\clamscan.exe'
+        clamscan_path = r'./clamscan.exe'
         result = subprocess.run([clamscan_path, '--no-summary', '--stdout', file_path], capture_output=True, text=True)
         if "OK" in result.stdout:
             print("File is safe:", file_path)
