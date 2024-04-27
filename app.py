@@ -51,6 +51,7 @@ def scan_file(file_path):
         return False
 
 @app.route('/upload', methods=['POST'])
+@cross_origin(origins='*')
 def upload_file():
     if 'file' not in request.files:
         return jsonify({'error': 'No file part'}), 400
