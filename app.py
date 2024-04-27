@@ -4,6 +4,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from werkzeug.utils import secure_filename
 import datetime
+from flask_cors import cross_origin
 
 app = Flask(__name__)
 CORS(app)
