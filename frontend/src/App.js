@@ -56,7 +56,7 @@ function App() {
     fd.append("date", appointment.date); // Include date in the form data
     fd.append("time", appointment.time); // Include time in the form data
 
-    axios.post("http://localhost:5000/upload", fd, {
+    axios.post("https://validated-file-upload-react-flask-v1k5.onrender.com/upload", fd, {
       onUploadProgress: (progressEvent) => {
         setProgress((progressEvent.loaded / progressEvent.total) * 100);
       },
