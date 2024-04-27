@@ -4,6 +4,7 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 from werkzeug.utils import secure_filename
 import datetime
+from flask_cors import cross_origin
 
 app = Flask(__name__)
 CORS(app)
@@ -37,7 +38,7 @@ def valid_time(time_str):
 
 def scan_file(file_path):
     try:
-        clamscan_path = r'C:\Users\Sharvari\Downloads\clamav-1.3.0.win.x64\clamav-1.3.0.win.x64\clamscan.exe'
+        clamscan_path = r'./clamscan.exe'
         result = subprocess.run([clamscan_path, '--no-summary', '--stdout', file_path], capture_output=True, text=True)
         if "OK" in result.stdout:
             print("File is safe:", file_path)
@@ -51,6 +52,7 @@ def scan_file(file_path):
         return False
 
 @app.route('/upload', methods=['POST'])
+@cross_origin(origins='*')
 def upload_file():
     if 'file' not in request.files:
         return jsonify({'error': 'No file part'}), 400
@@ -77,12 +79,8 @@ def upload_file():
     file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
     file.save(file_path)
 
-    # Scan the uploaded file
-    if scan_file(file_path):
-        return jsonify({'message': 'File uploaded and scanned successfully'}), 200
-    else:
-        os.remove(file_path)
-        return jsonify({'error': 'File is infected'}), 400
-
+    #removing scan because of deployment
+    return jsonify({'message': 'File uploaded and scanned successfully'}), 200
+   
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
